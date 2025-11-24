@@ -1,0 +1,89 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(180deg, #87ceeb 0%, #e0f6ff 100%);
+            overflow: hidden;
+        }
+
+        .scene {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .road {
+            position: absolute;
+            bottom: 35%;
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(90deg, #333 0%, #555 50%, #333 100%);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .road::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: repeating-linear-gradient(
+                90deg,
+                #ffff00 0px,
+                #ffff00 40px,
+                transparent 40px,
+                transparent 80px
+            );
+         
+        }
+
+        .car {
+            position: absolute;
+            bottom: 35%;
+            left: -200px;
+            width: 200px;
+            height: 100px;
+            z-index: 5;
+        }
+
+        .car::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            width: 140px;
+            height: 50px;
+            background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+            border-radius: 8px 8px 0 0;
+
+        }
+        .car::after {
+            content: '';
+
+            position: absolute;
+            top: 0;
+            left: 80px;
+            width: 90px;
+            height: 30px;
+            background: linear-gradient(135deg, #ff6666 0%, #ff4444 100%);
+            border-radius: 15px;
+
+        }
+
+        .wheel-left, .wheel-right {
+            position: absolute;
+            bottom: -1px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 3px solid #000000;
+
+        }
+        .wheel-left { left: 40px; }
+        .wheel-right { left: 130px; }
